@@ -1,0 +1,36 @@
+{
+    "name": "abdulbaset/response-format-trait",
+    "description": "A PHP package for standardizing and formatting API and web responses.",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "homepage": "https://digitalatum.com",
+    "autoload": {
+        "psr-4": {
+            "Abdulbaset\\ResponseFormatTrait": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Abdulbaset R. Sayed",
+            "email": "AbdulbasetRedaSayedHF@Gmail.com"
+        },
+        {
+            "name": "Abdulbaset R. Sayed",
+            "email": "Abdulbaset_RS@DigitalAtum.com"
+        }
+    ],
+    "keywords": [
+        "php",
+        "laravel",
+        "library",
+        "response",
+        "format",
+        "trait",
+        "api",
+        "web",
+        "respond",
+        "formatting",
+        "response-format-trait"
+    ]
+}
