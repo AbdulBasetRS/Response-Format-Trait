@@ -7,7 +7,7 @@
     "homepage": "https://digitalatum.com",
     "autoload": {
         "psr-4": {
-            "Abdulbaset\\ResponseFormatTrait": "src/"
+            "Abdulbaset\\ResponseFormatTrait\\": "src/"
         }
     },
     "authors": [
