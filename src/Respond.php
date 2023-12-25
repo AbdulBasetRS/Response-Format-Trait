@@ -85,7 +85,7 @@ trait Respond
      * @param array|null $data    Data to include in the response.
      * @return string    JSON-encoded response.
      */
-    public static function toApi(int $status = null, string $message = null, string $details = null, array $data = null)
+    public static function toApi(int $status = null, string $message = null, string $details = null, $data = null)
     {
         return self::respond($status, $message, $details, $data);
     }
@@ -99,7 +99,7 @@ trait Respond
      * @param array|null $data    Data to include in the response.
      * @return string    JSON-encoded response.
      */
-    public static function toWeb(int $status = null, string $message = null, string $details = null, array $data = null)
+    public static function toWeb(int $status = null, string $message = null, string $details = null, $data = null)
     {
         return self::respond($status, $message, $details, $data);
     }
