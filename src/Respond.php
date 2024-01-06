@@ -131,6 +131,6 @@ trait Respond
             'message' => $message,
             'details' => $details,
             'data' => $data
-        ]);
+        ],$statusCode);
     }
 }
