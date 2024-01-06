@@ -3,7 +3,7 @@
     "description": "A PHP package for standardizing and formatting API and web responses.",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "homepage": "https://digitalatum.com",
     "autoload": {
         "psr-4": {
@@ -34,7 +34,6 @@
         "response-format-trait"
     ],
     "require": {
-        "php": "^7.4",
         "illuminate/support": "^8.0"
     }
 }
