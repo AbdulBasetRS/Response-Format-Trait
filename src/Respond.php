@@ -2,6 +2,8 @@
 
 namespace Abdulbaset\ResponseFormatTrait;
 
+use Illuminate\Support\Facades\Response;
+
 trait Respond
 {
     /**
@@ -124,15 +126,11 @@ trait Respond
             $data = [$data];
         }
 
-        // Set HTTP response code and headers
-        header('Content-Type: application/json');
-        http_response_code($statusCode);
-        echo json_encode([
+        return Response::json([
             'status' => $statusCode,
             'message' => $message,
             'details' => $details,
             'data' => $data
         ]);
-        exit();
     }
 }
