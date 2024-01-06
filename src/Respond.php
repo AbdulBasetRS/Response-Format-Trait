@@ -91,20 +91,6 @@ trait Respond
     }
 
     /**
-     * Generate a JSON response for web consumption.
-     *
-     * @param int|null $status    HTTP status code.
-     * @param string|null $message    Custom message for the response.
-     * @param string|null $details    Additional details for the response.
-     * @param array|null $data    Data to include in the response.
-     * @return string    JSON-encoded response.
-     */
-    public static function toWeb(int $status = null, string $message = null, string $details = null, $data = null)
-    {
-        return self::respond($status, $message, $details, $data);
-    }
-
-    /**
      * Internal method to generate a JSON response.
      *
      * @param int|null $statusCode    HTTP status code.
@@ -139,13 +125,14 @@ trait Respond
         }
 
         // Set HTTP response code and headers
-        http_response_code($statusCode);
         header('Content-Type: application/json');
-        return json_encode([
+        http_response_code($statusCode);
+        echo json_encode([
             'status' => $statusCode,
             'message' => $message,
             'details' => $details,
             'data' => $data
         ]);
+        exit();
     }
 }
