@@ -30,7 +30,7 @@ trait Respond
         $language = config('response-format.language');
 
         // Check if the configured language is supported
-        if (!self::isLanguageSupported($language)) {
+        if ($language === null OR !self::isLanguageSupported($language)) {
             // Handle unsupported language
             // For example, you might log an error or use a fallback language
             $language = 'en'; // Fallback to English

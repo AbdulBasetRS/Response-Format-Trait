@@ -14,12 +14,12 @@ class ResponseFormatTraitServiceProvider extends ServiceProvider
         // Publish language files
         $this->publishes([
             __DIR__ . '/../lang' => resource_path('lang/vendor/response-format-trait'),
-        ]);
+        ], 'lang');
 
         // Publish config file
         $this->publishes([
             __DIR__ . '/../Config/response-format.php' => config_path('response-format.php'),
-        ]);
+        ], 'config');
     }
 
     public function register()
