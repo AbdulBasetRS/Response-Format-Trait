@@ -33,7 +33,7 @@ This command will copy the response-format.php file to your config directory, al
 
 2. Generating Responses
 
-- first exaple
+- First example
 
 ```php
 use Abdulbaset\ResponseFormatTrait\Respond;
@@ -50,14 +50,14 @@ class YourController extends Controller
 }
 ```
 
-- seconed example
+- The second example
+  This will generate a JSON response with the provided status code, message, details, and optional data.
 
 ```php
 use Abdulbaset\ResponseFormatTrait\Respond;
 
 class YourController extends Controller
 {
-
     public function someMethod()
     {
         // Example usage:
@@ -66,12 +66,32 @@ class YourController extends Controller
 }
 ```
 
-This will generate a JSON response with the provided status code, message, details, and optional data.
+- Checks if a given language is supported
+
+```php
+use Abdulbaset\ResponseFormatTrait\Respond;
+
+class YourController extends Controller
+{
+    public function someMethod()
+    {
+        if (Respond::isLanguageSupported('en')) {
+            // English language is supported
+            // Perform actions accordingly
+        } else {
+            // English language is not supported
+            // Handle unsupported language scenario
+        }
+    }
+}
+```
+
+This method validates whether a given language code is supported within the Respond trait. It checks if the provided language code exists within the predefined list of supported languages. If the language code is found in the list, the method returns true, indicating that the language is supported. Otherwise, it returns false.
 
 ## Configuration
 
 You can customize the behavior of the package by modifying the response-format.php configuration file. The available options are:
-Supported languages:
+**Supported languages**:
 
 - 'en': English
 - 'de': German
