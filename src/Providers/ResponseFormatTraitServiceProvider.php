@@ -1,6 +1,6 @@
 <?php
 
-namespace Abdulbaset\ResponseFormatTrait;
+namespace Abdulbaset\ResponseFormatTrait\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
