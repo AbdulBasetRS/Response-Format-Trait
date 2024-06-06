@@ -22,58 +22,74 @@ composer require abdulbaset/response-format-trait
 
 # Usage
 
-after installing the package you should include the namespace, see the following code:
+1. Publishing Configuration File
+   You can publish the configuration file using the following command:
 
 ```bash
+php artisan vendor:publish --provider="Abdulbaset\ResponseFormatTrait\ResponseFormatTraitServiceProvider" --tag="config"
+```
+
+This command will copy the response-format.php file to your config directory, allowing you to customize the package's behavior.
+
+2. Generating Responses
+
+- first exaple
+
+```php
 use Abdulbaset\ResponseFormatTrait\Respond;
+
+class YourController extends Controller
+{
+    use Respond;
+
+    public function someMethod()
+    {
+        // Example usage:
+        return $this->formatApi(200, 'Success', 'Resource created successfully', $data);
+    }
+}
 ```
 
-for use toApi method, see the following code:
+- seconed example
 
-```bash
-echo Respond::toApi(200);
+```php
+use Abdulbaset\ResponseFormatTrait\Respond;
+
+class YourController extends Controller
+{
+
+    public function someMethod()
+    {
+        // Example usage:
+        return  Respond::formatApi(200);
+    }
+}
 ```
 
-- use,
-  ![Screenshot 1](/media/use%20toApi%20with%20status%20code%20200.png)
+This will generate a JSON response with the provided status code, message, details, and optional data.
 
-- output,
-  ![Screenshot 1](/media/output%20toApi%20with%20status%20code%20200.PNG)
+## Configuration
 
-for use all parameters in toApi method, see the following code:
+You can customize the behavior of the package by modifying the response-format.php configuration file. The available options are:
+Supported languages:
 
-```bash
-echo Respond::toApi(
-        200, // status
-        'successful response', // message
-        'details response with status code 200', // details
-        ['testOne', 'testTwo'] // data
-    );
-```
+- 'en': English
+- 'de': German
+- 'fr': French
+- 'ar': Arabic
+- 'es': Spanish
+- 'it': Italian
 
-- use,
-  ![Screenshot 1](/media/use%20toApi%20With%20full%20parameters.png)
-
-- output,
-  ![Screenshot 1](/media/output%20toApi%20With%20full%20parameters.PNG)
-
-for use getStatusCodeSupported method to get all Status Supported with message and details, see the following code:
-
-```bash
-echo json_encode(Respond::getStatusCodeSupported());
-```
-
-- use,
-  ![Screenshot 1](/media/use%20getStatusCodeSupported.png)
-
-- output,
-  ![Screenshot 1](/media/output%20getStatusCodeSupported.PNG)
+If set to null, the language will be determined dynamically.
 
 ## Author
 
-- Abdulbaset R. Sayed <AbdulbasetRedaSayedHF@Gmail.com>
--
+The package was created by Abdulbaset R. Sayed <AbdulbasetRedaSayedHF@Gmail.com>
+
+## Contributing
+
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request on GitHub.
 
 ## License
 
-This Response Format Package PHP Package is open-source software licensed under the MIT License.
+This Package is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
