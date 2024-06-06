@@ -3,7 +3,7 @@
 // Config/response-format.php
 
 return [
- 
+
     /*
     |--------------------------------------------------------------------------
     | Default Language
@@ -27,6 +27,6 @@ return [
     | Otherwise, it will be the application's default locale.
     |
     */
-    'language' => config('app.locale', 'en'),
+    'language' => 'ar',
 
 ];

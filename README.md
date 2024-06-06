@@ -28,7 +28,7 @@ composer update abdulbaset/response-format-trait
 
 After running the update command in your Laravel project directory, and Composer will check for updates to the `abdulbaset/response-format-trait` package and its dependencies. If a newer version is available, Composer will download and install it, updating your project.
 
-# Usage
+## Usage
 
 1. Publishing Configuration File
    You can publish the configuration file or language files using the following command:
@@ -97,9 +97,33 @@ class YourController extends Controller
 
 This method validates whether a given language code is supported within the Respond trait. It checks if the provided language code exists within the predefined list of supported languages. If the language code is found in the list, the method returns true, indicating that the language is supported. Otherwise, it returns false.
 
+## Examples
+
+Here are some examples of how you can use the `Respond` trait in your controllers:
+
+1. here you can customize message and details response as you need.
+   ![Screenshot 1](/media/version-1.1.1/example-1.png)
+   and you will get the response like:
+   ![Screenshot 1](/media/version-1.1.1/example-1-response.png)
+2. here you can change the default language to get message and details for some specific local as you need.
+   ![Screenshot 1](/media/version-1.1.1/example-2.png)
+   and you will get the response like:
+   ![Screenshot 1](/media/version-1.1.1/example-2-response.png)
+   other example for 404 not found error
+   ![Screenshot 1](/media/version-1.1.1/example-3.png)
+   and you will get the response like:
+   ![Screenshot 1](/media/version-1.1.1/example-3-response.png)
+3. if you want set the dynamically local language you can make middleware and set inside `config(['response-format.language' => config('app.local', 'en')]);`
+   ![Screenshot 1](/media/version-1.1.1/example-4.png)
+   and you will get the response like:
+   ![Screenshot 1](/media/version-1.1.1/example-4-response.png)
+4. if you want check the package is supported the language or not, you can use this `Respond::isLanguageSupported($language)` static method.
+   ![Screenshot 1](/media/version-1.1.1/example-5.png)
+
 ## Configuration
 
 You can customize the behavior of the package by modifying the `response-format.php` configuration file. The available options are:
+
 **Supported languages**:
 
 - 'en': English
