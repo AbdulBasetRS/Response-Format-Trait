@@ -34,8 +34,8 @@ After running the update command in your Laravel project directory, and Composer
    You can publish the configuration file or language files using the following command:
 
 ```bash
-php artisan vendor:publish --provider="Abdulbaset\ResponseFormatTrait\ResponseFormatTraitServiceProvider" --tag="config"
-php artisan vendor:publish --provider="Abdulbaset\ResponseFormatTrait\ResponseFormatTraitServiceProvider" --tag="lang"
+php artisan vendor:publish --provider="Abdulbaset\ResponseFormatTrait\Providers\ResponseFormatTraitServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Abdulbaset\ResponseFormatTrait\Providers\ResponseFormatTraitServiceProvider" --tag="lang"
 ```
 
 This command will copy the `response-format.php` file to your config directory, allowing you to customize the package's behavior.
