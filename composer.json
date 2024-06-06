@@ -3,7 +3,7 @@
     "description": "A PHP package for standardizing and formatting API and web responses.",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "homepage": "https://digitalatum.com",
     "autoload": {
         "psr-4": {
@@ -28,7 +28,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Abdulbaset\\ResponseFormatTrait\\ResponseFormatTraitServiceProvider"
+                "Abdulbaset\\ResponseFormatTrait\\Providers\\ResponseFormatTraitServiceProvider"
             ]
         }
     },
