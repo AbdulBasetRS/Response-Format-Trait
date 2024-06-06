@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Lang;
 
 trait Respond
 {
-    protected $supportedLanguages = ['ar', 'en', 'de', 'fr', 'es', 'it'];
+    protected static $supportedLanguages = ['en', 'ar', 'de', 'fr', 'es', 'it'];
 
     /**
      * Check if a language is supported.
